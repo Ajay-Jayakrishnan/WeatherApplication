@@ -1,0 +1,106 @@
+<nav class="navbar bg-dark ">
+    <div class="ms-1 ">
+       <a href="" class="navbar-brand fw-bold text-white" >
+       <i class="bi bi-cloud-sun fs-2"></i>MyWeather
+       </a>
+    </div>
+    <form class="d-flex me-1"  (ngSubmit)="search(input)" >
+        <input type="text" class="form-control" placeholder="City name" #input spellcheck="false">
+        <button class=" ms-1 btn btn-success" type="submit"> Search</button>
+    </form>
+</nav>
+<!-- body row -->   
+   
+     
+<section  >
+          
+            
+    <div class=" row content" style="position: relative; height: 80vh;" >
+
+  
+      <div class="col " ></div>
+      <!-- content column -->
+      <div class="col-10 col-sm-8 col-md-6 p-2  mt-5 mb-5 rounded-2 " style="background: rgba(255,255,255,0.5 );"  >
+       <!-- First row in content column -->
+          <div class="container-fluid  ">
+             <h1 style="font-family: 'Signika', sans-serif;">{{weather.name}} , {{weather.sys.country}} </h1>
+             <h6 class="mt-1" >Last Updated : {{time}}</h6>
+          </div>
+          <hr>
+          <!-- second row in content column -->
+          <div class=" container fluid   d-flex  mt-2 " >
+             
+                <div>
+                   <img [src]=icon alt="Weather icon">
+                   
+                </div>
+                <div class="mt-3 ms-2 ">
+             <h4 style="font-family: 'Signika', sans-serif;">{{weather.weather[0].main}}</h4>
+             <p>{{weather.weather[0].description}}</p>
+             </div>
+             <h1 class="mx-auto mt-2 " style="font-family: 'Signika', sans-serif;font-size: 50px;">{{temperature}}<sup>o</sup></h1> 
+          </div>
+          <hr>
+          <!-- third row in content column -->
+          <div class="container-fluid third row   mt-3  " >
+             <div class="col-6 col-md-4 d-flex    " >
+                <i class="bi bi-droplet fs-3 mt-2 text-info"></i>
+                <div class=" ms-3 text-center">
+                   <h5 style="font-family: 'Signika', sans-serif;">Humidity</h5>
+                   <h5>{{weather.main.humidity}}  %</h5>
+                </div>
+                
+             </div>
+             <div class="col-6 col-md-4 d-flex " >
+                
+                <i class="bi bi-cloud fs-3 mt-2 text-secondary "></i>
+                <div class=" ms-3 text-center">
+                   <h5 style="font-family: 'Signika', sans-serif;">Clouds</h5>
+                   <h5>{{weather.clouds.all}} %</h5>
+                </div>
+                
+             </div>
+           
+             <div class="col-6 col-md-4 d-flex  mx-auto">
+                <i class="bi bi-eye fs-3 mt-2 text-warning "></i>
+                <div class=" ms-3 text-center">
+                   <h5 style="font-family: 'Signika', sans-serif;">Visibility</h5>
+                   <h5>{{weather.visibility/1000}}  Km</h5>
+                </div>
+                
+             </div>
+          </div>
+            <!-- fourth row -->
+          <div class="row container-fluid fourth mt-3 ">
+            
+             <div class="col-6  d-flex  ">
+                <i class="bi bi-wind fs-3 mt-2 text-success"></i>
+                <div class=" ms-3 text-center">
+                   <h5 style="font-family: 'Signika', sans-serif;">Wind</h5>
+                   <h5>{{weather.wind.speed}} m/s</h5>
+                </div>
+                
+             </div>
+             <div class="col-6  d-flex ">
+                <i class="bi bi-speedometer fs-3 mt-2 text-danger "></i>
+                <div class=" ms-3 text-center">
+                   <h5 style="font-family: 'Signika', sans-serif;">Pressure</h5>
+                   <h5>{{weather.main.pressure}} hpa</h5>
+                </div>
+                
+             </div>
+            
+          </div>
+         
+      </div>
+     
+      <div class="col"></div> 
+    </div>
+</section>
+
+
+<footer>
+    <div class="bg-dark text-white d-flex justify-content-center align-items-center" style="height:12vh;">Achieved Using OpenWeather API</div>
+</footer>
+
+

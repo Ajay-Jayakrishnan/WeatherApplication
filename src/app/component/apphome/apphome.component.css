@@ -1,0 +1,14 @@
+@media (min-width:576px) {
+    .custom{display: flex  ;}
+    .third{ display: flex; }
+    .fourth{display:flex}
+    
+}
+
+.content {
+
+background-image: url("src/assets/ballon.webp");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
